@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd41a2dd-652d-4f0c-a7dd-0eee121d049c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-api/src/main/java/com/imooc/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-common/src/main/java/com/imooc/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-common/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-pojo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hire-pojo/src/main/java/com/imooc/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user-7001/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user-7001/src/main/java/com/imooc/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-user-7001/src/main/java/com/imooc/controller/hello.java" afterDir="false" />
+    <list default="true" id="cd41a2dd-652d-4f0c-a7dd-0eee121d049c" name="Changes" comment="feature(api): add submodules and dependencies">
+      <change afterPath="$PROJECT_DIR$/hire-common/src/main/java/com/imooc/enums/ActiveTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hire-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hire-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hire-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hire-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hire-common/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hire-common/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hire-pojo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hire-pojo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user-7001/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user-7001/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user-7001/src/main/java/com/imooc/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user-7001/src/main/java/com/imooc/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +49,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -100,11 +97,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740408685835</updated>
-      <workItem from="1740408687442" duration="8599000" />
+      <workItem from="1740408687442" duration="13792000" />
     </task>
+    <task id="LOCAL-00001" summary="feature(api): add submodules and dependencies">
+      <created>1740740956654</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740740956654</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature(api): add submodules and dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature(api): add submodules and dependencies" />
   </component>
 </project>

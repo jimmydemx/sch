@@ -67,7 +67,21 @@
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>4.0.0</version>
             </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.26</version> <!-- 根据你的项目使用的版本 -->
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>3.0.3</version>  <!-- 确保版本兼容 Spring Boot 3.x -->
+            </dependency>
         </dependencies>
+
+
 
 
     </dependencyManagement>
