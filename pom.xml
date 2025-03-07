@@ -13,6 +13,7 @@
         <module>hire-common</module>
         <module>hire-api</module>
         <module>hire-pojo</module>
+        <module>tests</module>
     </modules>
 
     <properties>
@@ -79,16 +80,29 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>3.0.3</version>  <!-- 确保版本兼容 Spring Boot 3.x -->
             </dependency>
+
+
+            <!--            // jwt依赖-->
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>0.12.3</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>0.12.3</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>0.12.3</version>
+                <scope>runtime</scope>
+            </dependency>
         </dependencies>
-
-
-
-
     </dependencyManagement>
-
-
-
-
 
 
 </project>
