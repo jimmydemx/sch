@@ -5,6 +5,10 @@ springdoc:
     enabled: true  # 启用 Swagger UI
     path: /swagger-ui.html  # 自定义 Swagger UI 访问路径
   default-flat-param-object: true  # 解决 @RequestBody + @RequestParam 混用参数格式问题
+  group-configs:
+    group: default
+    paths-to-match: /**
+    packages-to-scan: com.imooc.controller  # 你的 Controller 所在包
 
 knife4j:
   enable: true  # 启用 Knife4j 增强功能
