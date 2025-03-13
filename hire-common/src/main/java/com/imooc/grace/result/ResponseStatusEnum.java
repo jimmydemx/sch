@@ -16,6 +16,7 @@ public enum ResponseStatusEnum {
     HR_TICKET_INVALID(5021,false,"手机端会话失效，请重新登录！"),
     NO_AUTH(503,false,"您的权限不足，无法继续操作！"),
     MOBILE_ERROR(504,false,"短信发送失败，请稍后重试！"),
+    MOBILE_FORMAT_ERROR(5041,false,"手机号码格式错误,请输入正确手机号码"),
     SMS_NEED_WAIT_ERROR(505,false,"短信发送太快啦~请稍后再试！"),
     SMS_CODE_ERROR(506,false,"验证码过期或不匹配，请稍后再试！"),
     USER_FROZEN(507,false,"用户已被冻结，请联系管理员！"),
