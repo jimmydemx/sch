@@ -40,19 +40,19 @@ public class PassportController {
 
     @PostMapping("getsmscode")
     @Operation(summary ="SMS CODE",description = "get SMS code")
-    public GraceJSONResult getSMSCode(String mobile, String region, HttpServletRequest request){
+    public GraceJSONResult getSMSCode(String mobile, HttpServletRequest request){
         // 判断是否是正确的module号码
-       if(!MobileValidation.isPhoneValidated(mobile,region)){
+       if(!MobileValidation.isPhoneValidated(mobile)){
            return GraceJSONResult.errorCustom(ResponseStatusEnum.MOBILE_FORMAT_ERROR);
        }
         // 获得用户IP，限制用户只能60s
         String requestIp = IpUtils.getRequestIp(request);
-        redisOperators.setnx60s("MOBILE_SMSCODE_"+requestIp,region+"_"+mobile);
+        redisOperators.setnx60s("MOBILE_SMSCODE_"+requestIp,mobile);
         // 模拟生成随机的验证码
         String code = (int)((Math.random() * 9 + 1) * 100000) + "";
         log.info("验证码为: {}",code);
         // 生成以后，存入redis，等待过期
-        redisOperators.setString("MOBILE_SMSCODE_"+region+"_"+mobile,code,1800);
+        redisOperators.setString("MOBILE_SMSCODE_"+mobile,code,1800);
         return GraceJSONResult.OK();
     }
 
@@ -61,7 +61,7 @@ public class PassportController {
     public GraceJSONResult login(@Valid @RequestBody RegisterLoginBO registerLoginBO, HttpServletRequest request){
 
         // 在redis中寻找，如果找不到，返回错误
-        String key = "MOBILE_SMSCODE_"+"_"+registerLoginBO.getMobile();
+        String key = "MOBILE_SMSCODE_"+registerLoginBO.getMobile();
         String code = registerLoginBO.getSmsCode();
         String redisCode = redisOperators.getValue(key);
 
@@ -70,6 +70,7 @@ public class PassportController {
         }
 
         // 在数据库中查找，是否有这个手机号，
+
 
         // 如果数据为空，必须要信息入库
 

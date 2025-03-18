@@ -8,9 +8,9 @@ public class MobileValidation {
 
     private static final PhoneNumberUtil phoneUtil =  PhoneNumberUtil.getInstance();
 
-    public static boolean isPhoneValidated(String mobile, String region){
+    public static boolean isPhoneValidated(String mobile){
         try{
-            Phonenumber.PhoneNumber number = phoneUtil.parse(mobile, region);
+            Phonenumber.PhoneNumber number = phoneUtil.parse(mobile, "ZZ");
             return phoneUtil.isValidNumber(number);
         }catch (NumberParseException e){
         return false;
