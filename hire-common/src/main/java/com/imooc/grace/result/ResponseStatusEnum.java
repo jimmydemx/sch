@@ -53,6 +53,8 @@ public enum ResponseStatusEnum {
 
     HTTP_URL_CONNECT_ERROR(551, false, "目标地址无法请求！"),
 
+    SYSTEM_SMS_FALLBACK_ERROR(553, false, "系统错误，短信无法收到"),
+
     // admin 管理系统 56x
     ADMIN_USERNAME_NULL_ERROR(561, false, "管理员登录名不能为空！"),
     ADMIN_USERNAME_EXIST_ERROR(562, false, "管理员账户名已存在！"),
