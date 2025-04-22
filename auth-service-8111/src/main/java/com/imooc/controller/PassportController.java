@@ -3,6 +3,7 @@ package com.imooc.controller;
 import com.imooc.bo.RegisterLoginBO;
 import com.imooc.grace.result.GraceJSONResult;
 import com.imooc.grace.result.ResponseStatusEnum;
+import com.imooc.retry.RetryComponent;
 import com.imooc.utils.IpUtils;
 import com.imooc.utils.MobileValidation;
 import com.imooc.utils.RedisOperators;
