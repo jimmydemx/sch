@@ -5,7 +5,7 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class WorkQueuesConsumerB {
+public class RoutingConsumerB {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -18,6 +18,8 @@ public class WorkQueuesConsumerB {
         // 通过工程创建Connection
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
+
+        String routing_queue_pay="routing_queue_pay";
 
 
         /**
@@ -44,7 +46,7 @@ public class WorkQueuesConsumerB {
                 System.out.println(new String(body));
             }
         };
-        channel.basicConsume("work_queue",true,consumer);
+        channel.basicConsume(routing_queue_pay,true,consumer);
 
     }
 }

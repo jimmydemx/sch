@@ -5,7 +5,7 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class WorkQueuesConsumerB {
+public class TopicOrderConsumer {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -20,12 +20,13 @@ public class WorkQueuesConsumerB {
         Channel channel = connection.createChannel();
 
 
+
         /**
          * queue: 监听的队列名
          * autoAck: 是否自动确认，true：告知mq消费者已经消费的确认通知
          * callback：回调很熟，吃力监听到的消息
          */
-
+        String topic_queue_order = "topic_queue_order";
         DefaultConsumer consumer = new DefaultConsumer(channel) {
             /**
              *
@@ -44,7 +45,6 @@ public class WorkQueuesConsumerB {
                 System.out.println(new String(body));
             }
         };
-        channel.basicConsume("work_queue",true,consumer);
-
+        channel.basicConsume(topic_queue_order,true,consumer);
     }
 }

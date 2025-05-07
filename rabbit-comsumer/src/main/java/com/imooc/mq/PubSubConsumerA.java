@@ -5,7 +5,7 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class WorkQueuesConsumerB {
+public class PubSubConsumerA {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -19,16 +19,11 @@ public class WorkQueuesConsumerB {
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
 
-
-        /**
-         * queue: 监听的队列名
-         * autoAck: 是否自动确认，true：告知mq消费者已经消费的确认通知
-         * callback：回调很熟，吃力监听到的消息
-         */
+        String fanout_queue_a = "fanout_queue_a";
+        channel.queueDeclare(fanout_queue_a, true, false, false, null);
 
         DefaultConsumer consumer = new DefaultConsumer(channel) {
             /**
-             *
              * @param consumerTag 消息的标签（标识）
              * @param envelope 信封(一些信息，比如交换机路由等信息）
              * @param properties 配置信息
@@ -44,7 +39,9 @@ public class WorkQueuesConsumerB {
                 System.out.println(new String(body));
             }
         };
-        channel.basicConsume("work_queue",true,consumer);
+        channel.basicConsume(fanout_queue_a,true,consumer);
 
     }
+
+
 }
