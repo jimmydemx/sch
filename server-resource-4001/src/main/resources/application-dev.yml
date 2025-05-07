@@ -16,5 +16,14 @@ spring:
     virtual-host: "/"
     host: localhost
     port: 5672
-    publisher-confirm-type: correlated # 生产端可靠性需要加上的confirm 回调
-    publisher-returns: true # 生产端开启return回调
+    listener:
+      simple:
+        acknowledge-mode: manual # 消费端手动确认
+        prefetch: 2 # 每次每个消费者从mq拉去消息的数量，知道手动ack确认以后才去去拉取下面一个， 类似负载均衡，对于不同服务器能力设置
+
+# ENC(ihZsUVhTSpwqOh47J1hf1g==)
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    password: aasdndiawjwnmo2039
