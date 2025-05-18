@@ -32,5 +32,7 @@ public class RedisOperators {
     }
 
 
-
+    public boolean deleteKey(String key){
+        return Boolean.TRUE.equals(stringRedisTemplate.delete(key));
+    }
 }
