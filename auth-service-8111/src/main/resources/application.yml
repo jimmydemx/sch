@@ -9,4 +9,26 @@ spring:
     name: auth-service
   profiles:
     active: dev
+#  注意 config.import 以及cloud.nacos.config都需要配置在application.yml 否者会出现配置错误
+  config:
+    import: nacos:gateway.yml
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: localhost:8848
+        enabled: true
+    openfeign:
+      client:
+        config:
+          default:
+              connect-timeout: 5000
+              read-timeout: 5000
 
+logging:
+  level:
+    com.alibaba.nacos: DEBUG
+    org.springframework.cloud.client.discovery: DEBUG
