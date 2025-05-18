@@ -9,6 +9,11 @@ spring:
     active: dev
   application:
     name: service-user-7001
-
-
+mybatis-plus:
+  config-location: classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: assign_id
+      update-strategy: not_empty # 在使用db update方法时候，如果传入的一个空字符，不会更新
+    banner: false
 
