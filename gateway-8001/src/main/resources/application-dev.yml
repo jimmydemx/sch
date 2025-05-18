@@ -1,0 +1,59 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/imooc-hire-dev?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: EJfKKkNc2H.
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+
+  cloud:
+      nacos:
+        discovery:
+          server-addr: localhost:8848
+      gateway:
+        discovery:
+          locator:
+            enabled: true     # 动态路由，从注册中心根据微服务的名字获得目标节点的地址
+        routes: # 路由规则（数组）
+          - id: userRoute   # 每一项路由都有一个唯一的id编号，可以自定义
+            uri: lb://service-user-7001    # lb=负载均衡，会动态寻址
+            # uri: http://192.168.1.111:7001 http://localhost:7001
+            predicates: # 匹配断言，符合条件则放行（可以模糊匹配，或者精确匹配到某个具体的端口和名称）
+              - Path=/u/**,/admininfo/**,/userinfo/**
+#          - id: companyRoute
+#            uri: lb://company-service
+#            predicates:
+#              - Path=/c/**
+          - id: authRoute
+            uri: lb://auth-service
+            predicates:
+              - Path=/a/**,/passport/**,/saas/**,/admin/**
+#          - id: resourceRoute
+#            uri: lb://resource-service
+#            predicates:
+#              - Path=/r/**
+          - id: workRoute
+            uri: lb://work-service
+            predicates:
+              - Path=/work/**,/resume/**
+#          - id: fileRoute
+#            uri: lb://file-service
+#            predicates:
+#              - Path=/file/**,/static/**
+        globalcors:
+          cors-configurations:
+            '[/**]':
+              allowedOriginPatterns: "*"
+              allowedHeaders: "*"
+              allowedMethods: "*"
+              allowCredentials: true
+      loadbalancer:
+        nacos:
+          enabled: true   # 开启基于nacos规则的负载均衡
