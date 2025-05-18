@@ -5,7 +5,10 @@ server:
     max-swallow-size: -1
 
 spring:
-  application:
-    name: service-user
   profiles:
     active: dev
+  application:
+    name: service-user-7001
+
+
+

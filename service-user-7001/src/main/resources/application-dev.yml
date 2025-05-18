@@ -4,3 +4,15 @@ spring:
     url: jdbc:mysql://localhost:3306/sky_take_out?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: EJfKKkNc2H.
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+    loadbalancer:
+      nacos:
+        enabled: true   # 开启基于nacos规则的负载均衡
+  config:
+    import: nacos:gateway.yaml
