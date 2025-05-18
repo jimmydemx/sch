@@ -34,6 +34,9 @@ public class GraceJSONResult {
     // 响应数据，可以是Object，也可以是List或Map等
     private Object data;
 
+    public GraceJSONResult() {
+    }
+
     /**
      * 成功返回，带有数据的，直接往OK方法丢data数据即可
      * @param data
@@ -110,7 +113,7 @@ public class GraceJSONResult {
 
     /**
      * 自定义错误范围，需要传入一个自定义的枚举，可以到[ResponseStatusEnum.java[中自定义后再传入
-     * @param responseStatus
+     * @param responseStatusEnum
      * @return
      */
     public static GraceJSONResult errorCustom(ResponseStatusEnum responseStatusEnum){
