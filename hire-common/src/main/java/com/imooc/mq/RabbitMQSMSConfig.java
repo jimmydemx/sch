@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.Duration;
+
 /***
  * RabbitMQ的配置类
  * 1. 创建交换机
@@ -18,7 +20,7 @@ public class RabbitMQSMSConfig {
     public static final String SMS_EXCHANGE = "sms_exchange";
     public static final String SMS_ROUTING_KEY = "imooc.sms.#";
     public static final String SMS_QUEUE = "sms_queue";
-    public static final Integer TTL = 30*1000;
+    public static final Duration TTL = Duration.ofSeconds(30);
 
     @Bean(SMS_EXCHANGE)
     public Exchange exchange(){
@@ -28,7 +30,7 @@ public class RabbitMQSMSConfig {
     @Bean(SMS_QUEUE)
     public Queue queue(){
         return QueueBuilder.durable(SMS_QUEUE)
-                .withArgument("x-message-ttl", TTL)  // 设置所有消息在这个队列中能够live的时间是10s，超过以后此消息就会删除
+                .withArgument("x-message-ttl", TTL.toMillis())  // 设置所有消息在这个队列中能够live的时间是10s，超过以后此消息就会删除
                 .withArgument("x-dead-letter-exchange", RabbitMQSMSConfig_Dead.SMS_EXCHANGE_DEAD)
                 .withArgument("x-dead-letter-routing-key", "dead.sms.mq")
                 .withArgument("x-max-length", 6)
