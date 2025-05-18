@@ -1,4 +1,4 @@
-package com.imooc.vo;
+package com.imooc;
 
 import java.io.Serializable;
 import java.time.LocalDate;
