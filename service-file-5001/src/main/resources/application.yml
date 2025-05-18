@@ -1,0 +1,29 @@
+server:
+  port: 8111
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1
+
+spring:
+  application:
+    name: auth-service
+  profiles:
+    active: dev
+  #  注意 config.import 以及cloud.nacos.config都需要配置在application.yml 否者会出现配置错误
+  config:
+    import: nacos:gateway.yml
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: localhost:8848
+        enabled: true
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 5000
+            read-timeout: 5000
