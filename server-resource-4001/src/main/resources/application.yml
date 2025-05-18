@@ -10,3 +10,15 @@ spring:
   profiles:
     active: dev
 
+  config:
+    import: nacos:gateway.yml
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: localhost:8848
+        enabled: true
+
