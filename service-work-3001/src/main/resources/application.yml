@@ -1,0 +1,25 @@
+server:
+  port: ${port:3001}
+  tomcat:
+    uri-encoding: UTF-8
+    max-swallow-size: -1
+
+spring:
+  application:
+    name: work-service
+  profiles:
+    active: dev
+  config:
+    import: nacos:gateway.yml
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: localhost:8848
+        enabled: true
+    loadbalancer:
+        nacos:
+          enabled: true   # 开启基于nacos规则的负载均衡
