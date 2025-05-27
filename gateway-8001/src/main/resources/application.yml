@@ -20,9 +20,10 @@ spring:
     nacos:
       discovery:
         ephemeral: true
-        server-addr: localhost:8848
+        server-addr: 192.168.118.1:8848
+        ip: 192.168.118.1
       config:
-        server-addr: localhost:8848
+        server-addr: 192.168.118.1:8848
         file-extension: yaml
         group: DEFAULT_GROUP
     openfeign:
@@ -51,3 +52,24 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.web: DEBUG
+
+seata:
+  enabled: true
+  service:
+    vgroupMapping:
+      my_tx_group: default
+    grouplist:
+      default: 192.168.118.1:8091
+  tx-service-group: my_tx_group
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.118.1:8848
+      group: SEATA_GROUP
+      namespace: ""
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.118.1:8848
+      namespace: ""
+      group: SEATA_GROUP

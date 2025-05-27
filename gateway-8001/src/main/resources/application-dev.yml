@@ -35,18 +35,18 @@ spring:
             uri: lb://auth-service
             predicates:
               - Path=/a/**,/passport/**,/saas/**,/admin/**
-#          - id: resourceRoute
-#            uri: lb://resource-service
-#            predicates:
-#              - Path=/r/**
+          - id: resourceRoute
+            uri: lb://resource-service
+            predicates:
+              - Path=/r/**
           - id: workRoute
             uri: lb://work-service
             predicates:
               - Path=/work/**,/resume/**
-#          - id: fileRoute
-#            uri: lb://file-service
-#            predicates:
-#              - Path=/file/**,/static/**
+          - id: fileRoute
+            uri: lb://file-service
+            predicates:
+              - Path=/file/**,/static/**
         globalcors:
           cors-configurations:
             '[/**]':

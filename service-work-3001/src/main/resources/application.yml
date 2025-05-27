@@ -23,3 +23,24 @@ spring:
     loadbalancer:
         nacos:
           enabled: true   # 开启基于nacos规则的负载均衡
+
+seata:
+  enabled: true
+  service:
+    vgroupMapping:
+      my_tx_group: default
+    grouplist:
+      default: 192.168.118.1:8091
+  tx-service-group: my_tx_group
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.118.1:8848
+      group: SEATA_GROUP
+      namespace: ""
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.118.1:8848
+      namespace: ""
+      group: SEATA_GROUP
