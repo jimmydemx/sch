@@ -3,6 +3,7 @@ package com.imooc.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.imooc.Users;
+import com.imooc.aspects.operation_log.OperationLog;
 import com.imooc.bo.InitRequest;
 import com.imooc.enums.Sex;
 import com.imooc.enums.ShowWhichName;
@@ -88,6 +89,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     }
 
     @Override
+    @OperationLog(title = "User", businessType = "Mobile")
     public Users getUserByMobile(String mobile) {
         QueryWrapper<Users> usersQueryWrapper = new QueryWrapper<>();
         usersQueryWrapper.eq("mobile", mobile).orderByDesc("id").last("limit 1");

@@ -212,4 +212,13 @@ public class PassportController {
         return GraceJSONResult.OK();
     }
 
+
+    @GetMapping
+    @Operation(summary = "Get user by mobile", description = "Get user by mobile")
+    public GraceJSONResult getUserByMobile(String mobile) {
+
+        Users userByMobile = usersService.getUserByMobile(mobile);
+        return GraceJSONResult.OK(userByMobile);
+    }
+
 }
