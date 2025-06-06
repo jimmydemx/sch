@@ -1,4 +1,3 @@
-
 //	此资源由 58学课资源站 收集整理
 //	想要获取完整课件资料 请访问：58xueke.com
 //	百万资源 畅享学习
@@ -15,6 +14,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 import java.security.SignatureException;
 import java.util.HashMap;
@@ -23,6 +23,14 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GraceExceptionHandler {
+
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    @ResponseBody
+    public GraceJSONResult returnMaxUploadSizeExceededException(MaxUploadSizeExceededException e) {
+        e.printStackTrace();
+        return GraceJSONResult.exception(ResponseStatusEnum.FILE_MAX_SIZE_100MB_ERROR);
+    }
 
     @ExceptionHandler(MyCustomException.class)
     @ResponseBody
