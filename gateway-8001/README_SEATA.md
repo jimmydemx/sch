@@ -70,6 +70,15 @@ console:
 这里需要明确指定环境变量`-e SEATA_IP`, 否则有可能SEATA使用docker内部的IP地址
 
 ```bash
+
+# 这里增加nacos的run
+docker run -d \
+-p 8848:8848 \
+-p 9848:9848 \
+-e MODE=standalone \
+--name nacos \
+nacos/nacos-server:v2.5.1 
+
 docker run -d \
   -p 8091:8091 \
   -e SEATA_IP=192.168.118.1 \
@@ -208,7 +217,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**");
     }
 }
-
 
 ```
 
