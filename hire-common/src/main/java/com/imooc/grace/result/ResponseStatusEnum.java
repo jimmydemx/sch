@@ -11,32 +11,33 @@ public enum ResponseStatusEnum {
     FAILED(500, false, "操作失败！"),
 
     // 50x
-    UN_LOGIN(501,false,"请登录后再继续操作！"),
-    TICKET_INVALID(502,false,"会话失效，请重新登录！"),
-    HR_TICKET_INVALID(5021,false,"手机端会话失效，请重新登录！"),
-    NO_AUTH(503,false,"您的权限不足，无法继续操作！"),
-    MOBILE_ERROR(504,false,"短信发送失败，请稍后重试！"),
-    MOBILE_FORMAT_ERROR(5041,false,"手机号码格式错误,请输入正确手机号码"),
-    SMS_NEED_WAIT_ERROR(505,false,"短信发送太快啦~请稍后再试！"),
-    SMS_CODE_ERROR(506,false,"验证码过期或不匹配，请稍后再试！"),
-    USER_FROZEN(507,false,"用户已被冻结，请联系管理员！"),
-    USER_UPDATE_ERROR(508,false,"用户信息更新失败，请联系管理员！"),
-    USER_INACTIVE_ERROR(509,false,"请前往[账号设置]修改信息激活后再进行后续操作！"),
-    USER_INFO_UPDATED_ERROR(5091,false,"用户信息修改失败！"),
-    USER_INFO_UPDATED_NICKNAME_EXIST_ERROR(5092,false,"昵称已经存在！"),
-    USER_INFO_UPDATED_IMOOCNUM_EXIST_ERROR(5092,false,"慕课号已经存在！"),
-    USER_INFO_CANT_UPDATED_IMOOCNUM_ERROR(5092,false,"慕课号无法修改！"),
-    FILE_UPLOAD_NULL_ERROR(510,false,"文件不能为空，请选择一个文件再上传！"),
-    FILE_UPLOAD_FAILD(511,false,"文件上传失败！"),
-    FILE_FORMATTER_FAILD(512,false,"文件图片格式不支持！"),
-    FILE_MAX_SIZE_500KB_ERROR(5131,false,"仅支持500kb大小以下的文件上传！"),
-    FILE_MAX_SIZE_2MB_ERROR(5132,false,"仅支持2MB大小以下的文件上传！"),
-    FILE_MAX_SIZE_8MB_ERROR(5132,false,"体验版仅支持8MB以下的文件上传！"),
-    FILE_MAX_SIZE_100MB_ERROR(5132,false,"仅支持100MB大小以下的文件上传！"),
-    FILE_NOT_EXIST_ERROR(514,false,"你所查看的文件不存在！"),
-    USER_STATUS_ERROR(515,false,"用户状态参数出错！"),
-    USER_NOT_EXIST_ERROR(516,false,"用户不存在！"),
-    USER_PARAMS_ERROR(517,false,"用户请求参数出错！"),
+    UN_LOGIN(501, false, "请登录后再继续操作！"),
+    TICKET_INVALID(502, false, "会话失效，请重新登录！"),
+    HR_TICKET_INVALID(5021, false, "手机端会话失效，请重新登录！"),
+    NO_AUTH(503, false, "您的权限不足，无法继续操作！"),
+    MOBILE_ERROR(504, false, "短信发送失败，请稍后重试！"),
+    MOBILE_FORMAT_ERROR(5041, false, "手机号码格式错误,请输入正确手机号码"),
+    SMS_NEED_WAIT_ERROR(505, false, "短信发送太快啦~请稍后再试！"),
+    SMS_CODE_ERROR(506, false, "验证码过期或不匹配，请稍后再试！"),
+    USER_FROZEN(507, false, "用户已被冻结，请联系管理员！"),
+    USER_UPDATE_ERROR(508, false, "用户信息更新失败，请联系管理员！"),
+    USER_INACTIVE_ERROR(509, false, "请前往[账号设置]修改信息激活后再进行后续操作！"),
+    USER_INFO_UPDATED_ERROR(5091, false, "用户信息修改失败！"),
+    USER_INFO_UPDATED_NICKNAME_EXIST_ERROR(5092, false, "昵称已经存在！"),
+    USER_INFO_UPDATED_IMOOCNUM_EXIST_ERROR(5092, false, "慕课号已经存在！"),
+    USER_INFO_CANT_UPDATED_IMOOCNUM_ERROR(5092, false, "慕课号无法修改！"),
+    FILE_UPLOAD_NULL_ERROR(510, false, "文件不能为空，请选择一个文件再上传！"),
+    FILE_UPLOAD_FAILD(511, false, "文件上传失败！"),
+    FILE_FORMATTER_FAILD(512, false, "文件图片格式不支持！"),
+    FILE_MAX_SIZE_500KB_ERROR(5131, false, "仅支持500kb大小以下的文件上传！"),
+    FILE_MAX_SIZE_2MB_ERROR(5132, false, "仅支持2MB大小以下的文件上传！"),
+    FILE_MAX_SIZE_8MB_ERROR(5132, false, "体验版仅支持8MB以下的文件上传！"),
+    FILE_MAX_SIZE_100MB_ERROR(5132, false, "仅支持100MB大小以下的文件上传！"),
+    FILE_NOT_EXIST_ERROR(514, false, "你所查看的文件不存在！"),
+    FILE_DOWNLOAD_FAILD(515, false, "文件下载错误"),
+    USER_STATUS_ERROR(516, false, "用户状态参数出错！"),
+    USER_NOT_EXIST_ERROR(517, false, "用户不存在！"),
+    USER_PARAMS_ERROR(518, false, "用户请求参数出错！"),
 
     // 自定义系统级别异常 54x
     SYSTEM_INDEX_OUT_OF_BOUNDS(541, false, "系统错误，数组越界！"),
@@ -78,9 +79,9 @@ public enum ResponseStatusEnum {
     ARTICLE_REVIEW_ERROR(585, false, "文章审核出错！"),
     ARTICLE_ALREADY_READ_ERROR(586, false, "文章重复阅读！"),
 
-    COMPANY_INFO_UPDATED_ERROR(5151,false,"企业信息修改失败！"),
-    COMPANY_INFO_UPDATED_NO_AUTH_ERROR(5151,false,"当前用户无权修改企业信息！"),
-    COMPANY_IS_NOT_VIP_ERROR(5152,false,"企业非VIP或VIP特权已过期，请至企业后台充值续费！"),
+    COMPANY_INFO_UPDATED_ERROR(5151, false, "企业信息修改失败！"),
+    COMPANY_INFO_UPDATED_NO_AUTH_ERROR(5151, false, "当前用户无权修改企业信息！"),
+    COMPANY_IS_NOT_VIP_ERROR(5152, false, "企业非VIP或VIP特权已过期，请至企业后台充值续费！"),
 
 
     // 人脸识别错误代码
@@ -115,7 +116,6 @@ public enum ResponseStatusEnum {
     PAYMENT_ORDER_CREATE_ERROR(5904, false, "支付中心订单创建失败，请联系管理员！"),
 
 
-
     // admin 相关错误代码
     ADMIN_NOT_EXIST(5101, false, "管理员不存在！");
 
@@ -135,9 +135,11 @@ public enum ResponseStatusEnum {
     public Integer status() {
         return status;
     }
+
     public Boolean success() {
         return success;
     }
+
     public String msg() {
         return msg;
     }
