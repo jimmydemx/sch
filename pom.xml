@@ -186,6 +186,14 @@
                 <version>1.8.0</version>
             </dependency>
 
+
+            <!--  存储资源使用     -->
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>8.5.9</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>

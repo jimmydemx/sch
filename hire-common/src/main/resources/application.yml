@@ -28,5 +28,10 @@ spring:
       max-file-size: 100MB   # 文件上传大小前置，设置最大值
       max-request-size: 100MB # 文件最大请求限制，用于批量上传
 
-
+minio:
+  endpoint: http://localhost:9000
+  access-key: root
+  secret-key: root123456
+  secure: false  # 使用HTTP而非HTTPS
+  bucket-name: imooc
 
