@@ -1,4 +1,3 @@
-
 //	此资源由 58学课资源站 收集整理
 //	想要获取完整课件资料 请访问：58xueke.com
 //	百万资源 畅享学习
@@ -17,9 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
-import java.util.Base64;
 
 import javax.crypto.SecretKey;
+import java.util.Base64;
 import java.util.Date;
 
 @Component
@@ -30,10 +29,13 @@ public class JWTUtils {
     public static final String at = "@";
 
     @Autowired
-    private  JWTProperties jwtProperties;
+    private JWTProperties jwtProperties;
 
     @Value("${auth.key}")
     public String JWT_KEY;
+
+    @Value("${jwt.key}")
+    public String JWT_SECRET;
 
     public String createJWTWithPrefix(String body, Long expireTimes, String prefix) {
         if (expireTimes == null)
@@ -62,6 +64,7 @@ public class JWTUtils {
 //        String userKey = jwtProperties.getKey();
         String userKey = JWT_KEY;
         log.info("Nacos jwt key = " + JWT_KEY);
+        log.info("key store in nacos:{}", JWT_SECRET);
 
         // 1. 对秘钥进行base64编码
 
