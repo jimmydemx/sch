@@ -1,9 +1,11 @@
 package com.imooc.controller;
 
+import com.google.gson.JsonObject;
 import com.imooc.Users;
 import com.imooc.bo.RegisterLoginBO;
 import com.imooc.grace.result.GraceJSONResult;
 import com.imooc.grace.result.ResponseStatusEnum;
+import com.imooc.intercept.JWTCurrentUserInterceptor;
 import com.imooc.mq.RabbitMQSMSConfig;
 import com.imooc.mq.SMSContentQO;
 import com.imooc.service.UsersService;
@@ -27,6 +29,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+import static com.imooc.base.BaseInfoProperties.APP_USER_JSON;
 import static com.imooc.base.BaseInfoProperties.TOKEN_USER_PREFIX;
 
 @RestController
@@ -53,7 +56,24 @@ public class PassportController {
 
     @GetMapping("/hello")
     @Operation(summary = "hello", description = "test api")
-    public GraceJSONResult Hello() {
+    public GraceJSONResult Hello(
+            HttpServletRequest request
+    ) {
+
+        // 方法一：获得JWT中的相关信息
+        String header = request.getHeader(APP_USER_JSON);
+        if (!StringUtils.isBlank(header)) {
+            JsonObject jsonObject = GsonUtils.string2Object(header);
+            log.info("header:{}", jsonObject);
+
+        }
+
+
+        // 方法二： 获得jwt中相关的星系
+
+        Users users = JWTCurrentUserInterceptor.currentUser.get();
+        log.info("users:{}", users);
+
         return GraceJSONResult.OK("hello world");
     }
 
@@ -180,7 +200,11 @@ public class PassportController {
 
 
         // 范围jwttoken
-        String jwtWithPrefix = jwtUtils.createJWTWithPrefix(GsonUtils.object2String(userByMobile), Long.valueOf(60 * 1000), TOKEN_USER_PREFIX);
+//        Users userForJWT = new Users();
+//        userForJWT.setId(userByMobile.getId());
+//        userForJWT.setMobile(userByMobile.getMobile());
+//        userForJWT.setRole(userByMobile.getRole());
+        String jwtWithPrefix = jwtUtils.createJWTWithPrefix(GsonUtils.object2String(userByMobile), Long.valueOf(6000 * 1000), TOKEN_USER_PREFIX);
         // 拿到jwt不需要进行放入redis吗？
 
         // 删除redis短信验证码
