@@ -3,7 +3,7 @@ package com.imooc.base;
 public class BaseInfoProperties {
 
     public static final String SYMBOL_DOT = ".";       // 小圆点，无意义，可用可不用
-
+    public static final String USER_TOKEN = "userToken";
     public static final String TOKEN_USER_PREFIX = "app";       // app端的用户token前缀
     public static final String TOKEN_SAAS_PREFIX = "saas";      // 企业saas平台的用户token前缀
     public static final String TOKEN_ADMIN_PREFIX = "admin";    // 运营管理平台的用户token前缀
@@ -94,11 +94,11 @@ public class BaseInfoProperties {
 
     // 支付中心地址 - 创建商户订单
 //    public static final String PAYMENT_URL_CREATE_MERCHANT_ORDER = "http://192.168.1.6:9060/payment/createMerchantOrder";		// dev
-    public static final String PAYMENT_URL_CREATE_MERCHANT_ORDER = "http://172.17.172.127:9060/payment/createMerchantOrder";		// prod
+    public static final String PAYMENT_URL_CREATE_MERCHANT_ORDER = "http://172.17.172.127:9060/payment/createMerchantOrder";        // prod
     //    String PAYMENT_URL_CREATE_MERCHANT_ORDER = "http://payment.t.mukewang.com/foodie-payment/payment/createMerchantOrder";		// produce
     // 支付中心地址 - 获得微信支付二维码
 //    public static final String PAYMENT_URL_GET_WXPAY_QRCODE = "http://192.168.1.6:9060/payment/getWXPayQRCode";		// dev
-    public static final String PAYMENT_URL_GET_WXPAY_QRCODE = "http://172.17.172.127:9060/payment/getWXPayQRCode";		// prod
+    public static final String PAYMENT_URL_GET_WXPAY_QRCODE = "http://172.17.172.127:9060/payment/getWXPayQRCode";        // prod
 //    String PAYMENT_URL_GET_WXPAY_QRCODE = "http://payment.t.mukewang.com/foodie-payment/payment/getWXPayQRCode";		// produce
 
     // 慕聘网 - 支付后的回调通知api接口地址
