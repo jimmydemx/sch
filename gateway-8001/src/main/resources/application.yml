@@ -10,7 +10,7 @@ spring:
   profiles:
     active: dev
   config:
-    import: nacos:gateway.yaml
+    import: nacos:jwt_config.yaml
   rabbitmq:
     username: guest
     password: guest
@@ -26,6 +26,10 @@ spring:
         server-addr: 192.168.118.1:8848
         file-extension: yaml
         group: DEFAULT_GROUP
+        extension-configs:
+          - data-id: jwt_config.yaml
+            group: DEFAULT_GROUP
+            refresh: true  # 动态刷新配置
     openfeign:
       client:
         config:
@@ -73,3 +77,12 @@ seata:
       server-addr: 192.168.118.1:8848
       namespace: ""
       group: SEATA_GROUP
+
+
+minio:
+  endpoint: http://localhost:9000
+  access-key: root
+  secret-key: root123456
+  secure: false  # 使用HTTP而非HTTPS
+  bucket-name: imooc
+
