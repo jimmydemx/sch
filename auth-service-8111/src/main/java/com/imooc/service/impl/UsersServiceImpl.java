@@ -77,12 +77,12 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
         log.info("全局事务 XID: {}", RootContext.getXID());
 
-        try {
-            int a = 1 / 0; // 业务代码
-        } catch (Exception e) {
-            log.error("事务异常，触发回滚", e);
-            throw e; // 必须抛出，Seata 才会回滚
-        }
+//        try {
+//            // int a = 1 / 0; // 业务代码
+//        } catch (Exception e) {
+//            log.error("事务异常，触发回滚", e);
+//            throw e; // 必须抛出，Seata 才会回滚
+//        }
 
 
         return user;
