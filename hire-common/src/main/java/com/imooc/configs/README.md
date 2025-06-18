@@ -1,4 +1,11 @@
 
+- 使用 ` @Component
+  @Data
+  @ConfigurationProperties(prefix = "auth")
+  @PropertySource("classpath:jwt.properties")` 可以只用在`.properties`文件加载文件，`classpath`一般是`src/main/resources`下,
+- 如果是`@PropertySource("classpath:config/custom.properties")` 表示`src/main/resources/config/` 下面的`custom.properties`文件
+
+
 - [StaticResourceConfig.java](StaticResourceConfig.java) 是将static文件夹映射到本地一个文件夹中，这样可以直接通过`http://localhost:8001/static/abc.png`访问此图片。
 
 ```java
