@@ -21,6 +21,7 @@
         <module>service-work-3001</module>
         <module>gateway-8001</module>
         <module>service-file-5001</module>
+        <module>service-company-6001</module>
     </modules>
 
     <properties>
