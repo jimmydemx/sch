@@ -78,4 +78,13 @@ public class FileController {
         minioUtils.deleteFile(objectFileName);
         return GraceJSONResult.OK();
     }
+
+
+    //--------------------logo for company ------------------------//
+    @PostMapping("uploadLogo")
+    public GraceJSONResult uploadLogo(@RequestParam("file") MultipartFile file) {
+        minioUtils.uploadFile(file);
+        String fileUrl = minioUtils.getFileUrl(file.getOriginalFilename());
+        return GraceJSONResult.OK(fileUrl);
+    }
 }

@@ -11,13 +11,17 @@ spring:
     active: dev
   #  注意 config.import 以及cloud.nacos.config都需要配置在application.yml 否者会出现配置错误
   config:
-    import: nacos:gateway.yml
+    import: nacos:jwt_config.yaml
   cloud:
     nacos:
       config:
         server-addr: localhost:8848
         file-extension: yaml
         group: DEFAULT_GROUP
+        extension-configs:
+          - data-id: jwt_config.yaml
+            group: DEFAULT_GROUP
+            refresh: true
       discovery:
         server-addr: localhost:8848
         enabled: true
