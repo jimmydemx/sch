@@ -69,6 +69,10 @@ public enum ResponseStatusEnum {
     ADMIN_DELETE_ERROR(5691, false, "删除管理员失败！"),
     CATEGORY_EXIST_ERROR(570, false, "文章分类已存在，请换一个分类名！"),
 
+
+    //Industry
+    INDUSTRY_EXIST(5701, false, "行业已经存在"),
+
     // 媒体中心 相关错误 58x
     ARTICLE_COVER_NOT_EXIST_ERROR(580, false, "文章封面不存在，请选择一个！"),
     ARTICLE_CATEGORY_NOT_EXIST_ERROR(581, false, "请选择正确的文章领域！"),
@@ -79,6 +83,8 @@ public enum ResponseStatusEnum {
     ARTICLE_REVIEW_ERROR(585, false, "文章审核出错！"),
     ARTICLE_ALREADY_READ_ERROR(586, false, "文章重复阅读！"),
 
+
+    COMPANY_NOT_EXIST(5151, false, "企业不存在"),
     COMPANY_INFO_UPDATED_ERROR(5151, false, "企业信息修改失败！"),
     COMPANY_INFO_UPDATED_NO_AUTH_ERROR(5151, false, "当前用户无权修改企业信息！"),
     COMPANY_IS_NOT_VIP_ERROR(5152, false, "企业非VIP或VIP特权已过期，请至企业后台充值续费！"),
