@@ -27,10 +27,10 @@ spring:
             # uri: http://192.168.1.111:7001 http://localhost:7001
             predicates: # 匹配断言，符合条件则放行（可以模糊匹配，或者精确匹配到某个具体的端口和名称）
               - Path=/u/**,/admininfo/**,/userinfo/**
-#          - id: companyRoute
-#            uri: lb://company-service
-#            predicates:
-#              - Path=/c/**
+          - id: companyRoute
+            uri: lb://company-service
+            predicates:
+              - Path=/c/**,/company/**
           - id: authRoute
             uri: lb://auth-service
             predicates:
@@ -38,7 +38,7 @@ spring:
           - id: resourceRoute
             uri: lb://resource-service
             predicates:
-              - Path=/r/**
+              - Path=/r/**,/industry/**
           - id: workRoute
             uri: lb://work-service
             predicates:
