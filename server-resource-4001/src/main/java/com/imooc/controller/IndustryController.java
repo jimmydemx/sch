@@ -36,11 +36,15 @@ public class IndustryController {
 
     @GetMapping("/toplist")
     public GraceJSONResult getTopList() {
-
         List<String> topList = industryService.getTopList();
-
         return GraceJSONResult.OK(topList);
+    }
 
+
+    @GetMapping("/children/{industryId}")
+    public GraceJSONResult getChildren(@PathVariable Long industryId) {
+        List<String> childrenIndustryList = industryService.getChildrenIndustryList(industryId);
+        return GraceJSONResult.OK(childrenIndustryList);
     }
 
 }

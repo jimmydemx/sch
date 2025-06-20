@@ -14,4 +14,6 @@ public interface IndustryService extends IService<Industry> {
     public List<String> getTopList();
 
 
+    public List<String> getChildrenIndustryList(Long industryId);
+
 }

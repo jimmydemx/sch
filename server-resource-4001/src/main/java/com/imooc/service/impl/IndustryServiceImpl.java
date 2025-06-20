@@ -34,4 +34,12 @@ public class IndustryServiceImpl extends ServiceImpl<IndustryMapper, Industry> i
         return list.stream().map(Industry::getName).collect(Collectors.toList());
     }
 
+    @Override
+    public List<String> getChildrenIndustryList(Long industryId) {
+        List<Industry> list = lambdaQuery().select(Industry::getName)
+                .eq(Industry::getFatherId, industryId).orderByAsc(Industry::getSort).list();
+
+        return list.stream().map(Industry::getName).collect(Collectors.toList());
+    }
+
 }
