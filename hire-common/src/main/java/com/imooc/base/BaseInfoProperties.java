@@ -32,6 +32,11 @@ public class BaseInfoProperties {
     // 某个字典code下所对应的所有字典列表
     public static final String REDIS_DATA_DICTIONARY_ITEM_LIST = "redis_data_dictionary_item_list";
 
+
+    public static final String TOP_INDUSTRY_LIST = "top_industry_list";
+    public static final String SECOND_INDUSTRY_LIST = "second_industry_list";
+    public static final String THIRD_INDUSTRY_LIST = "third_industry_list";
+    
     // 企业信息相关
     public static final String REDIS_COMPANY_BASE_INFO = "company_base_info";
     public static final String REDIS_COMPANY_MORE_INFO = "company_more_info";

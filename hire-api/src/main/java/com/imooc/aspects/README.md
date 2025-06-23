@@ -1,6 +1,6 @@
 练习: 设计一个注解叫做@OperationLog
  # 注解
-```java
+```json
 {
   "title": "产品管理", //传入
   "businessType": "新增产品", //传入 

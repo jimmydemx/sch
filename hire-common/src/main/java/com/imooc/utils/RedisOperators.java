@@ -12,27 +12,32 @@ public class RedisOperators {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    public void setString(String key, String value) {
+        stringRedisTemplate.opsForValue().set(key, value);
+    }
+
     public void setString(String key, String value, long timeout) {
-        stringRedisTemplate.opsForValue().set(key,value,timeout, TimeUnit.SECONDS);
+        stringRedisTemplate.opsForValue().set(key, value, timeout, TimeUnit.SECONDS);
     }
 
 
     /**
      * 如果key不存在，则设置，如果存在，则不操作
+     *
      * @param key
      * @param value
      */
-    public void  setnx60s(String key,String value){
-        stringRedisTemplate.opsForValue().setIfAbsent(key,value,60,TimeUnit.SECONDS);
+    public void setnx60s(String key, String value) {
+        stringRedisTemplate.opsForValue().setIfAbsent(key, value, 60, TimeUnit.SECONDS);
     }
 
 
-    public String getValue(String key){
-       return stringRedisTemplate.opsForValue().get(key);
+    public String getValue(String key) {
+        return stringRedisTemplate.opsForValue().get(key);
     }
 
 
-    public boolean deleteKey(String key){
+    public boolean deleteKey(String key) {
         return Boolean.TRUE.equals(stringRedisTemplate.delete(key));
     }
 }

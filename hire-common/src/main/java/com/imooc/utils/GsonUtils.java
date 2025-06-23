@@ -85,6 +85,13 @@ public class GsonUtils {
         return t;
     }
 
+    public static <T> T stringToBean(String gsonString) {
+
+        T o = gson.fromJson(gsonString, new TypeToken<T>() {
+        }.getType());
+        return o;
+    }
+
 //    public static <T> T stringToBean2(String gsonString, Class<T> cls) {
 //
 //        JsonParser jsonParser = new JsonParser();
