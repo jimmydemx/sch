@@ -13,7 +13,14 @@ public interface IndustryService extends IService<Industry> {
 
     public List<String> getTopList();
 
-
     public List<String> getChildrenIndustryList(Long industryId);
+
+    public void deleteIndustry(Long industryId);
+
+    public List<String> getThirdListByTop(Long topIndustryId);
+
+    public List<String> getGrandChildrenIndustryList(Industry industry);
+
+    public boolean updateIndustryName(String name, Long industryId, Integer level);
 
 }
