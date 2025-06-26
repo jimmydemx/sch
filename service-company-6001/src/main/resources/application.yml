@@ -59,3 +59,9 @@ minio:
   secret-key: root123456
   secure: false  # 使用HTTP而非HTTPS
   bucket-name: imooc
+
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
